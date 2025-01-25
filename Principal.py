@@ -71,4 +71,4 @@ def guardar():
     return render_template('success.html', operario=operario, total=total)
 
 if __name__ == "__main__":
-    app.run(debug=True, host="0.0.0.0", post=os.getenv("PORT", default=5000))
+    app.run(debug=True,)
