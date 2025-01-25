@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, jsonify
 from database import get_connection
-
+import os
 app = Flask(__name__)
 
 @app.route('/')
@@ -71,4 +71,4 @@ def guardar():
     return render_template('success.html', operario=operario, total=total)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, host="0.0.0.0", post=os.getenv("PORT", default=5000))
