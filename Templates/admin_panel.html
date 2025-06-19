@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Panel de Administración</title>
+  <style>
+    body {
+      background: #1e3c72;
+      color: white;
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    h1 {
+      margin-bottom: 40px;
+    }
+    .btn-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .btn {
+      padding: 15px 30px;
+      background-color: #ff9800;
+      border: none;
+      color: white;
+      font-size: 1.2em;
+      cursor: pointer;
+      border-radius: 8px;
+      width: 250px;
+      text-align: center;
+      text-decoration: none;
+    }
+    .btn:hover {
+      background-color: #ffa726;
+    }
+  </style>
+</head>
+<body>
+  <h1>Panel del Administrador</h1>
+  <div class="btn-container">
+    <a href="/admin/agregar-operacion" class="btn">Agregar Operación</a>
+    <a href="/admin/editar-operacion" class="btn">Editar Operación</a>
+    <a href="/admin/agregar-prenda" class="btn">Agregar Prenda</a>
+    <a href="/admin/editar-prenda" class="btn">Editar Prenda</a>
+    <a href="/admin/agregar-colegio" class="btn">Agregar Colegio</a>
+    <a href="/admin/editar-colegio" class="btn">Editar Colegio</a>
+    <a href="/admin/generar-nomina" class="btn">Generar Nómina</a>
+  </div>
+</body>
+</html>

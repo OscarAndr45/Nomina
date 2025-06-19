@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agregar Prenda</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #1e3c72, #2a5298);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .form-container {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 40px;
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      width: 400px;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2.5em;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+    }
+    .form-group { margin-bottom: 20px; }
+    label { display: block; margin-bottom: 8px; font-size: 1.1em; }
+    input[type="text"], select {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1em;
+      box-sizing: border-box;
+    }
+    .btn {
+      width: 100%;
+      padding: 15px;
+      background-color: #ff9800;
+      border: none;
+      color: white;
+      font-size: 1.2em;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      margin-bottom: 10px;
+    }
+    .btn:hover { background-color: #ffa726; }
+    .btn-secondary { background-color: #757575; }
+    .btn-secondary:hover { background-color: #9e9e9e; }
+    .back-btn {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background-color: rgba(255, 255, 255, 0.2);
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+    .back-btn:hover { background-color: rgba(255, 255, 255, 0.3); }
+  </style>
+</head>
+<body>
+  <a href="/admin_panel" class="back-btn">← Volver al Panel</a>
+  <div class="form-container">
+    <h1>Agregar Prenda</h1>
+    <form action="/admin/agregar-prenda" method="POST">
+      <div class="form-group">
+        <label for="nombre">Nombre de la Prenda:</label>
+        <input type="text" id="nombre" name="nombre" required>
+      </div>
+      <div class="form-group">
+        <label for="colegio_id">Colegio:</label>
+        <select id="colegio_id" name="colegio_id" required>
+          <option value="">Seleccione un colegio</option>
+          {% for colegio in colegios %}
+            <option value="{{ colegio[0] }}">{{ colegio[1] }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <button type="submit" class="btn">Agregar Prenda</button>
+      <a href="/admin_panel" class="btn btn-secondary" style="text-decoration: none; text-align: center; display: block;">Cancelar</a>
+    </form>
+  </div>
+</body>
+</html>

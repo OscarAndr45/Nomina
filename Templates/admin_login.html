@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Login Administrador</title>
+  <style>
+    body {
+      background: #2a5298;
+      color: white;
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    form {
+      background: rgba(0,0,0,0.2);
+      padding: 30px;
+      border-radius: 10px;
+    }
+    input {
+      display: block;
+      margin-bottom: 15px;
+      padding: 10px;
+      width: 250px;
+      border: none;
+      border-radius: 5px;
+    }
+    button {
+      padding: 10px 20px;
+      background: #ff9800;
+      border: none;
+      color: white;
+      font-size: 1em;
+      cursor: pointer;
+      border-radius: 5px;
+      align-content: center;
+    }
+    .volver-btn {
+    display: block;
+    width: 200px;
+    margin: 20px auto;
+    text-align: center;
+    background-color: #6c757d;
+    color: white;
+    padding: 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.volver-btn:hover {
+    background-color: #5a6268;
+}
+  </style>
+</head>
+<body>
+  <h1>Acceso Administrador</h1>
+  <form method="POST" action="/login">
+    <input type="text" name="usuario" placeholder="Usuario" required>
+    <input type="password" name="clave" placeholder="Contraseña" required>
+    <button type="submit">Ingresar</button>
+  </form>
+  <a href="/" class="volver-btn">Volver al inicio</a>
+</body>
+</html>

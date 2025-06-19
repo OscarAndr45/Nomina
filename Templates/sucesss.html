@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>¡Operación Exitosa!</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #1e3c72, #2a5298);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .success-container {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 40px;
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      width: 400px;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+    }
+    .mensaje {
+      font-size: 1.3em;
+      margin-bottom: 30px;
+    }
+    .btn {
+      width: 100%;
+      padding: 15px;
+      background-color: #ff9800;
+      border: none;
+      color: white;
+      font-size: 1.2em;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 10px;
+    }
+    .btn:hover { background-color: #ffa726; }
+  </style>
+</head>
+<body>
+  <div class="success-container">
+    <h1>¡Operación Exitosa!</h1>
+    <div class="mensaje">
+      {% if mensaje %}
+        {{ mensaje }}
+      {% else %}
+        El registro o actualización se realizó correctamente.
+      {% endif %}
+    </div>
+    <a href="/admin_panel" class="btn">Volver al Panel</a>
+  </div>
+</body>
+</html>
