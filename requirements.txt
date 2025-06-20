@@ -1,0 +1,8 @@
+Flask>=2.0.0
+gunicorn
+flask-mysqldb
+mysql-connector-python
+mariadb
+Werkzeug
+jinja2
+pandas
