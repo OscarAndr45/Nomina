@@ -1,17 +1,18 @@
 from flask import Flask
-import mariadb
+import mysql.connector
 import os
+
 def get_connection():
-    """Establece la conexión con la base de datos MariaDB."""
+    """Establece la conexión con la base de datos MySQL de InfinityFree."""
     try:
-        conn = mariadb.connect(
-            host=os.getenv("DB_HOST", "127.0.0.1"),  # Dirección del servidor, con valor predeterminado
-            port=int(os.getenv("DB_PORT", 3306)),    # Puerto, con valor predeterminado
-            user=os.getenv("DB_USER", "root"),       # Usuario, con valor predeterminado
-            password=os.getenv("DB_PASSWORD", "9007"),  # Contraseña, con valor predeterminado
-            database=os.getenv("DB_NAME", "nominas")    # Nombre de la base de datos, con valor predeterminado
+        conn = mysql.connector.connect(
+            host=os.getenv("DB_HOST", "sql102.infinityfree.com"),        # Dirección del servidor
+            port=int(os.getenv("DB_PORT", 3306)),                       # Puerto
+            user=os.getenv("DB_USER", "if0_39276113"),                  # Usuario
+            password=os.getenv("DB_PASSWORD", "59ABM0y8Nt9yK1i"),       # Contraseña
+            database=os.getenv("DB_NAME", "if0_39276113_nominas")       # Nombre de la base de datos
         )
         return conn
-    except mariadb.Error as e:
+    except mysql.connector.Error as e:
         print(f"Error al conectar con la base de datos: {e}")
         return None
