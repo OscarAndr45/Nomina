@@ -5,7 +5,7 @@ from flask import send_file
 import io
 import os
 
-app = Flask(__name__, static_folder='statics')
+app = Flask(__name__, template_folder='Templates', static_folder='statics')
 
 app.secret_key = '123456789'
 
