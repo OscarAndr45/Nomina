@@ -215,6 +215,27 @@ def editar_colegio():
     conn.close()
     return render_template('admin/editar_colegio.html', colegios=colegios)
 
+@app.route('/operario', methods=['GET'])
+def operario_login_form():
+    return render_template('operario_login.html')
+
+@app.route('/login_operario', methods=['POST'])
+def login_operario():
+    usuario = request.form['usuario']
+    clave = request.form['clave']
+
+    conn = get_connection()
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM operario WHERE usuario = %s AND clave = %s", (usuario, clave))
+    operario = cursor.fetchone()
+    conn.close()
+
+    if operario:
+        session['operario'] = usuario
+        # Redirige a la página que corresponda para operarios
+        return redirect(url_for('index'))   # Cambia 'inicio' por la ruta que desees
+    else:
+        return "Credenciales inválidas"
 
 @app.route('/guardar', methods=['POST'])
 def guardar():
